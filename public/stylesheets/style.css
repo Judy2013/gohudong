@@ -1,0 +1,72 @@
+@import url(animate.css);
+.navbar{position: relative; z-index: 10;}
+.slide{position: relative; top: -160px; z-index: 9; margin-bottom: 50px; margin-bottom: -110px;}
+.slide .item{height: 250px; background-size: auto 100%; background-position: center top; background-repeat: no-repeat;}
+.slide .item .btn-lg{margin-bottom: 50px;}
+.thumbnail{border:transparent; border-radius: 0; -webkit-border-radius:0; padding: 0;}
+.thumbnail .textCon{padding: 20px; border:1px solid #ddd; margin-top: 8px;}
+.thumbnail .textCon>h4{margin-top: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+h5{font-size: 16px;}
+.thumbnail .textCon>p{margin-bottom: 0; color: #666;}
+.imgCon{overflow: hidden; display: block;}
+.imgCon img{max-width: 100%;transition: opacity 3.2s cubic-bezier(0.075, 0.82, 0.165, 1), transform 3.2s cubic-bezier(0.075, 0.82, 0.165, 1);}
+.imgCon:hover img{opacity: .6;
+ -webkit-transform: scale(1.2) rotate(-8deg);
+ -moz-transform: scale(1.2) rotate(-8deg);
+ -o-transform: scale(1.2) rotate(-8deg);
+ -ms-transform: scale(1.2) rotate(-8deg);
+ transform: scale(1.2) rotate(-8deg);}
+.ptb30{padding-top: 30px; padding-bottom: 30px;}
+.brands img{max-width: 100%;}
+.footer{background: #777; color: #F6D6B1; margin-top: 50px; padding: 20px 0;}
+.footer p{margin-bottom: 5px;}
+.pr30, .media-left, .media > .pull-left.pr30{padding-right: 30px;}
+.thumbnail.border{border:1px solid #ddd; padding: 10px 30px;}
+
+.carousel-fade{background-color: #444;}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img{margin: 0 auto;}
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px){
+	.slide .item{height: 550px;}
+	.thumbnail .textCon{height: 131px;}
+	.carousel-caption{left: 0; right: 0;}
+	.carousel-caption p{width: 450px;}
+}
+@media screen and (min-width: 1190px){
+	.carousel-caption{width: 1190px; left: 50%; margin-left: -595px;}
+	.thumbnail.border{height: 400px;}
+}
+@media screen and (max-width: 767px){
+	.slide .item{height: 500px;}
+	.page-header{font-size: 20px;}
+	.cases .thumbnail .imgCon img{width: 100px;}
+	.carousel-caption h1{font-size: 20px; margin-bottom: 15px;}
+	.carousel-caption h3{font-size: 16px; margin-bottom: 15px;}
+	.nav > li{float: left;}
+	.navbar-brand{padding-top: 15px;}
+	.navbar-nav{margin-top: 5px; margin-bottom: 5px; float: right;}
+	.footer .text-right{text-align: center!important; padding-top: 20px;}
+	.slide .item .btn-lg{margin-bottom: 10px;}
+	.pr30, .media-left, .media > .pull-left.pr30{padding-right: 15px;}
+}

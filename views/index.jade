@@ -1,0 +1,106 @@
+extends layout
+
+block content
+	nav.navbar.navbar-default(role="navigation")
+		div.container
+			div.navbar-header
+				a.navbar-brand(href="#")
+					- var logo = logo
+					img(src='/images/logo.png')
+			div
+				ul.nav.navbar-nav.navbar-right
+					- var target = ['product','experience','live']
+					each nav,i in navbar
+						if i == navbar.length-1
+							li#livechat
+						else
+							li
+								a(href="#"+target[i])=nav
+	div#mycarousel.carousel.carousel-fade.slide(data-ride="carousel")
+		ol.carousel-indicators
+			each item,i in slider
+				if i == 0
+					li.active(data-target="mycarousel" data-slide-to=i)
+				else
+					li(data-target="mycarousel" data-slide-to=i)
+				
+		div.carousel-inner(role="listbox")
+			each item,i in slider
+				if i == 0
+					div.item.active(style='background-image:url('+slider[i].img+')')
+						div.carousel-caption
+							h1.textH1.animated.fadeInRight.s1= slider[i].textH1
+							h3.textH3.animated.fadeInRight.s2= slider[i].textH3
+							p.animated.fadeInRight.s3= slider[i].textP
+							a.btn.btn-lg.btn-primary.animated.fadeInRight.s4(href='###' data-toggle='modal' data-target='#myModal') 立即体验
+				else
+					div.item(style='background-image:url('+slider[i].img+')')
+						div.carousel-caption
+							h1.textH1.animated.fadeInRight.s1= slider[i].textH1
+							h3.textH3.animated.fadeInRight.s2= slider[i].textH3
+							p.animated.fadeInRight.s3= slider[i].textP
+							a.btn.btn-lg.btn-primary.animated.fadeInRight.s4(href='###' data-toggle='modal' data-target='#myModal') 立即体验
+	div#myModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel')
+		div.modal-dialog.modal-sm(role='document')
+			div.modal-content
+				div.modal-body
+					img.img-responsive(src='/images/saoma.jpg')
+					p.text-center 打开手机微信扫一扫
+	div.container#product
+		div.row
+			each item, i in charactors
+				div.col-sm-4
+					div.thumbnail
+						div.imgCon
+							img.img-responsive(src=charactors[i].img)
+						div.textCon
+							h4.title= charactors[i].title
+							p.dec= charactors[i].dec
+	div.container#experience
+		h2.page-header.text-center GO互动能应用到哪些场合？
+		div.cases
+			div.row
+				each item, i in cases
+					div.col-sm-3
+						div.thumbnail.border
+							div.imgCon.text-center.ptb30
+								img(src=cases[i].img)
+							h4.title.text-center= cases[i].title
+							p.dec= cases[i].dec
+	div.container
+		h2.page-header.text-center 最新上架活动项目
+		div
+			div.row
+				each item, i in activities
+					div.col-sm-3
+						div.thumbnail
+							div.imgCon.text-center
+								img(src=activities[i].img)
+							h5.title.text-center= activities[i].title
+	div.container#live
+		h2.page-header.text-center 720度现场
+		div
+			div.row
+				each item, i in albums
+					div.col-sm-4
+						div.thumbnail
+							a.imgCon.text-center(href=albums[i].link)
+								img(src=albums[i].img)
+	div.container
+		h2.page-header.text-center 他们也在用
+		div.brands.text-center
+			img(src='/images/brands.jpg')
+	footer.footer
+		div.container
+			div.row
+				div.col-sm-7
+					div.media
+						a.pull-left.pr30
+							img(src='/images/logo-lg.png')
+						div.media-body
+							h5 优意联创旗下产品 
+								a(href='http://www.uedtu.com',target='_blank') 优意联创官网
+							p 版权声明： 您应尊重相关作品著作人的合法权益，未经著作权人合法授权
+							p Copyright ©  gohudong.com 2015 . All Rights Reserved
+				div.col-sm-5.text-right
+					img(src='/images/code.png')
